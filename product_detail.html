@@ -2,11 +2,8 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <meta name="description" content="Página para el curso de Frontend Developer de Platzi">
-        <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>YardSale</title>
-        <link rel="icon" href="./assets/icons/garage.svg">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 940px)">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +12,7 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar--hidden">
+            <nav class="navbar">
                 <img src="./assets/icons/icon_menu.svg" alt="Icono de menu" class="menu_icon">
                 <div class="navbar-left">
                     <a href="#"><img src="./assets/icons/logo_yard_sale.svg" alt="Ir a inicio de la web" class="navbar-logo"></a>
@@ -54,22 +51,26 @@
             </nav>
         </header>
         <main>
-            <section class="login">
-                <div class="form-container container-create">
-                    <img src="./assets/icons/logo_yard_sale.svg" alt="Logo de YardSale" class="logo logo-login">
-                        <form action="" class="form form-create">
-                            <div>
-                                <label for="email" class="label">Email address</label>
-                                <input type="email" id="email" placeholder="platzi@example.com" class="input input-password">
-                                <label for="password" class="label">Password</label>
-                                <input type="password" id="password" placeholder="************" class="input input-password" >
-                                <input type="submit" value="Log in" class="accept-button primary-button">
-                                <a href="">Forgot my password</a>
-                            </div>
-                            <button class="accept-button secondary-button">Sign up</button>
-                        </form>
+            <aside class="product-detail">
+                <figure class="figure-product">
+                    <img src="./assets/imgs/zotac.jpg" alt="Tarjeta de video Zotac Rtc 3060">
+                    <figcaption class="points">
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                    </figcaption>
+                </figure>
+                <img src="./assets/icons/icon_close.svg" alt="Cerrar pestaña">
+                <div class="product-description">
+                    <p class="detail-price">$ 800,00</p>
+                    <p class="detail-title">Zotac RTX 3060</p>
+                    <p class="detail-text">With its functional and practical interior, this refrigerator also fulfills a decorative function, adding personality and a retro-vintage aesthetic to your kitchen or workplace.</p>
+                    <button class="accept-button add-to-cart">
+                        <img src="./assets/icons/white_cart_shape.svg" alt="Add to cart">
+                        Add to cart
+                    </button>
                 </div>
-            </section>
+            </aside>
         </main>
     </body>
     </html>

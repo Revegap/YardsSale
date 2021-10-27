@@ -15,7 +15,7 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar--hidden">
+            <nav class="navbar">
                 <img src="./assets/icons/icon_menu.svg" alt="Icono de menu" class="menu_icon">
                 <div class="navbar-left">
                     <a href="#"><img src="./assets/icons/logo_yard_sale.svg" alt="Ir a inicio de la web" class="navbar-logo"></a>
@@ -56,20 +56,21 @@
         <main>
             <section class="login">
                 <div class="form-container container-create">
-                    <img src="./assets/icons/logo_yard_sale.svg" alt="Logo de YardSale" class="logo logo-login">
-                        <form action="" class="form form-create">
-                            <div>
-                                <label for="email" class="label">Email address</label>
-                                <input type="email" id="email" placeholder="platzi@example.com" class="input input-password">
-                                <label for="password" class="label">Password</label>
-                                <input type="password" id="password" placeholder="************" class="input input-password" >
-                                <input type="submit" value="Log in" class="accept-button primary-button">
-                                <a href="">Forgot my password</a>
-                            </div>
-                            <button class="accept-button secondary-button">Sign up</button>
-                        </form>
+                    <h1 class="title title-create">My account</h1>
+                    <form action="" class="form form-create">
+                        <div>
+                            <label for="name" class="label">Name</label>
+                            <p class="value">Camila Yoko</p>
+                            <label for="email" class="label">Email address</label>
+                            <p class="value">platzi@example.com</p>
+                            <label for="password" class="label">Password</label>
+                            <p class="value">************</p>
+                        </div>
+                        <input type="submit" value="Edit" class="accept-button secondary-button">
+                    </form>
+ 
                 </div>
             </section>
-        </main>
+        
     </body>
     </html>

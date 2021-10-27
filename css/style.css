@@ -8,6 +8,7 @@
     --text-input-field: #F7F7F7;
     --hospital-green: #ACD9B2;
     --subtitle-color: #797979;
+    --order-price: #404040;
     --dark: #232830;
     --white: #FFFFFF;
     --black: #000000;
@@ -21,9 +22,66 @@ html{
 body{
     font-family: 'Quicksand', sans-serif;
 }
-.login{
+/* CSS de la Clase 11 */
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    height: 100vh;
+    height: 50px;
+    border-bottom: 1px solid var(--white);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.046805);
+}
+.navbar--hidden{
+    display: none;
+}
+.menu_icon{
+    width: 23px;
+    height: 18px;
+    margin-left: 20px;
+}
+.navbar-left{
+    display: flex;
+    align-items: center;
+}
+.navbar-logo{
+    width: 120px;
+    height: 30px;
+}
+.navbar-left > a{
+    height: 30px;
+}
+.navbar-left ul{
+    display: none;
+}
+.navbar-right li{
+    list-style: none;
+    margin-right: 20px;
+}
+.navbar-email{
+    display: none;
+}
+.navbar-shopping-cart{
+    position: relative;
+    height: 25px;
+}
+.navbar-shopping-cart span{
+    position: absolute;
+    top: -5px;
+    right: -7px;
+    width: 15px;
+    height: 15x;
+    background-color: var(--hospital-green);
+    border-radius: 50%;
+    font-size: var(--sm);
+    font-weight: bold;
+    text-align: center;
+}
+/* CSS de la Clase 1-6 */
+.login{
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 50px);
     display: grid;
     place-items: center;
 }
@@ -32,16 +90,23 @@ body{
     grid-template-rows: auto 1fr auto;
     width: 90%;
     min-width: 288px;
-    max-width: 340px;
-    
+    max-width: 382px;   
+}
+.container-create{
+    height: 100%;
 }
 .logo{
     width: 150px;
     height: 26px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 13px;
     justify-self: center;
 }
+.logo-login{
+    margin-top: 110px;
+}
 .title{
+    margin-top: 50px;
     margin-bottom: 9px;
     font-size: var(--lg);
     font-weight: bold;
@@ -49,8 +114,11 @@ body{
     color: var(--black);
     text-align: center;
 }
+.title-create{
+    margin-top: 30px;
+    text-align: left;
+}
 .subtitle{
-    margin-bottom: 42px;
     font-size: var(--lg);
     font-weight: 400;
     line-height: 2.3rem;
@@ -58,8 +126,17 @@ body{
     text-align: center;
 }
 .form{
+    margin-top: 42px;
     display: flex;
     flex-direction: column;
+}
+.form div{
+    display: flex;
+    flex-direction: column;
+}
+.form-create{
+    margin-top: 21px;
+    justify-content: space-between;
 }
 .label{
     margin-bottom: 6px;
@@ -71,7 +148,7 @@ body{
 .input{
     width: 100%;
     min-width: 288px;
-    max-width: 340px;
+    max-width: 382px;
     height: 40px;
     margin-bottom: 24px;
     padding: 6px;
@@ -79,19 +156,327 @@ body{
     border-radius: 10px;
     border: none;
 }
-.primary-button{
+.value{
+    margin-bottom: 40px;
+    font-size: var(--md);
+    font-weight: 400;
+    line-height: 2rem;
+    color: var(--subtitle-color);
+}
+.email-img{
+    width: 110px;
+    height: 110px;
+    justify-self: center;
+    margin: 26px 0;
+}
+.accept-button{
     width: 100%;
     min-width: 288px;
-    max-width: 340px;
+    max-width: 382px;
     height: 60px;
     margin-top: 11px;
+    margin-bottom: 20px;
     font-size: var(--lg);
     font-weight: bold;
     line-height: 2.3rem;
-    color: var(--white);
-    background-color: var(--hospital-green);
     border-radius: 10px;
-    border: none;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.0001);
     cursor: pointer;
+}
+.primary-button{
+    color: var(--white);
+    background-color: var(--hospital-green);
+    border: none;
+}
+.secondary-button{
+    color: var(--hospital-green);
+    border: 1px solid var(--hospital-green);
+    background-color: var(--white);
+}
+.resend{
+    margin-bottom: 20px;
+    font-size: var(--sm);
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--subtitle-color);
+    text-align: center;
+}
+.resend a{
+    text-decoration: none;
+    color: var(--hospital-green);
+}
+.form a{
+    font-size: var(--sm) ;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: var(--hospital-green);
+    text-align: center;
+}
+.cards-container{
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, 140px);
+    gap: 26px;
+    place-content: center;
+    margin: 30px 0px;
+}
+.product-card{
+    width: 100%;
+}
+.product-card > img{
+    width: 100%;
+    height: 140px;
+    border: 1px solid var(--very-light-pink);
+    border-radius: 20px;
+    object-fit: cover;
+}
+.product-info{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-family: 'Roboto',sans-serif;
+}
+.product-info figure img{
+    width: 35px;
+    height: 35px;
+}
+.product-info div p:nth-child(1), .order-price{
+    font-family: 'Roboto',sans-serif;
+    font-size: var(--md);
+    font-weight: bold;
+    line-height: 1.9rem;
+    color: var(--order-price);
+}
+.product-info div p:nth-child(2), .order-subfont{
+    font-size: var(--sm);
+    font-weight: 400;
+    line-height: 1.7rem;
+    color: var(--subtitle-color);
+}
+/* CSS de la Clase 7 */
+.desktop-menu{
+    width: 150px;
+    height: auto;
+    border: 1px solid var(--very-light-pink);
+    border-radius: 5px;
+    padding: 24px;
+}
+.desktop-menu ul{
+    text-align: right;
+    list-style: none;
+}
+.primary-list li{
+    margin-bottom: 24px;
+}
+.menu-list a, .order-font{
+    text-decoration: none;
+    font-size: var(--md);
+    font-weight: bold;
+    line-height: 2rem;
+    color: var(--black);
+}
+.menu--border{
+    border-top: 1px solid var(--very-light-pink);
+    padding-top: 24px;
+}
+.submenu-list a{ 
+    text-decoration: none;
+    font-size: var(--sm);
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--hospital-green)
+}
+/* CSS de la Clase 8 */
+.email--color a{ 
+    font-weight: 300;
+    color: var(--black)
+}
+.mobile-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    padding: 40px;
+}
+.mobile-menu ul{
+    list-style: none;
+}
+/* CSS de la Clase 9 */
+.my-order{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: calc(100vh - 50px);
+}
+.mobile--hidden{
+    display: none;
+}
+.my-order-container{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 90%;
+    min-width: 288px;
+    max-width: 382px;
+}
+.my-order-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+}
+.card--margin{
+    margin-top: 0px;
+}
+.order--background{
+    padding: 18px;
+    background-color: var(--text-input-field);
+    border-radius: 10px;
+}
+.my-order p:nth-child(2){
+    padding-top: 4px;
+}
+.shopping-cart{
+    padding-top: 30px;
+}
+.shopping-cart article, .cart-article{
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 17px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.shopping-cart figure img, .cart-article figure img{
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    border: 1px solid var(--very-light-pink);
+}
+/* CSS de la Clase 10 */
+.order-price span{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin-left: 20px;
+    background-image: url('../assets/icons/Path.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/* CSS de la Clase 11 */
+.product-detail{
+    height: calc(100vh - 50px);
+    width: 100%;
+    min-width: 320px;
+    max-width: 425px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+.figure-product{
+    height: 50%;
+}
+.figure-product img{
+    height: calc(100% - 24px);
+    width: 100%;
+    border: 0.5px solid rgba(0, 0, 0, 0.046805); 
+    border-radius: 0px 0px 20px 20px;
+    object-fit: cover;
+}
+.product-detail > img:nth-child(2){
+    display: none;
+}
+.product-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    min-width: 288px;
+    max-width: 382px;
+    height: 50%;
+    margin: 0 auto;
+}
+.product-description > p:nth-child(1){
+    margin-top: 25px;
+}
+.product-description > p:nth-child(2){
+    margin-top: 5px;
+}
+.product-description > p:nth-child(3){
+    margin-top: 20px;
+    overflow: hidden;
+}
+.add-to-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    background-color: var(--hospital-green);
+    border: none;
+    margin: 30px 0 0;
+}
+.add-to-cart img{
+    margin-right: 10px;
+}
+.detail-price{
+    font-family: 'Roboto',sans-serif;
+    font-size: var(--lg);
+    font-weight: bold;
+    line-height: 2.1rem;
+    color: var(--order-price);
+}
+.detail-title{
+    font-size: var(--lg);
+    font-weight: 400;
+    line-height: 2.2rem;
+    color: var(--subtitle-color);
+}
+.detail-text{
+    font-size: var(--md);
+    font-weight: 400;
+    line-height: 2rem;
+    color: var(--subtitle-color);
+}
+
+.points {
+    display: flex;
+    justify-content: center;
+}
+.points > li {
+    background: var(--very-light-pink);
+    width: 8px;
+    height: 8px;
+    margin: 8px 6px;
+    border-radius: 50%;
+    list-style-type: none;
+    cursor: pointer;
+}
+.points > .active {
+    background: var(--hospital-green);
+}
+.points > li:hover {
+background: var(--hospital-green);
+}
+.shopping-list{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: auto;
+}
+.title--hidden{
+    display: none;
+}
+.checkout{
+    margin: 0;
+}
+.navbar-cart {
+    display: none;
+}
+.navbar-title{
+    font-size: var(--lg);
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--black);
+    text-align: center;
 }
